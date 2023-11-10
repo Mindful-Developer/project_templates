@@ -1,4 +1,6 @@
-import msvcrt
+"""Windows-specific implementations of msvcrt and os functions"""
+
+import msvcrt  # pylint: disable=import-error
 import os
 
 

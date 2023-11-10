@@ -1,7 +1,9 @@
+"""Linux-specific implementations for os, sys, tty, and termios functions."""
+
 import sys
 import os
 import tty
-import termios
+import termios  # pylint: disable=import-error
 
 
 def clear():

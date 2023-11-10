@@ -1,10 +1,13 @@
+"""Utility module for tui elements"""
+
 import sys
 import os
 
 if os.name == "nt":
-    from os_interfaces.windows_interface import get_key, clear
+    from .os_interfaces.windows_interface import get_key, clear
 else:
-    from os_interfaces.linux_interface import get_key, clear
+    from .os_interfaces.linux_interface import get_key, clear
+
 
 
 def t_clear():
@@ -54,15 +57,15 @@ def t_select(
     options: list[str],
     arrow: str = "\033[1;34m>\033[0m",
     *,
-    q: bool = False,
-) -> str:
+    allow_q: bool = False,
+) -> str | None:
     """
     Display a menu in the terminal and return the selected option.
     :param title: The title of the menu.
     :param options: The options to display.
     :param arrow: The arrow to display next to the selected option.
-    :param q: Whether to allow 'q' to quit.
-    :return: The selected option.
+    :param allow_q: Whether to allow 'q' to quit.
+    :return: The selected option or None if 'q' was pressed.
     """
     current_option = 0
     option_count = len(options)
@@ -101,22 +104,20 @@ def t_select(
                 current_option -= 1
             print_menu()
 
-        elif key in ["\r", "\n", " "]:  # Enter key (carriage return or newline)
+        elif allow_q and key == "q":  # Allow 'q' to quit as well
+            sys.stdout.write("\n")  # Move the cursor down to the end of the menu
+            sys.stdout.flush()
+            return None
+
+        if key in ["\r", "\n", " "]:  # Enter key (carriage return or newline)
             sys.stdout.write("\n")  # Move the cursor down to the end of the menu
             sys.stdout.flush()
             return options[current_option]
-
-        elif q and key == "q":  # Allow 'q' to quit as well
-            sys.stdout.write("\n")  # Move the cursor down to the end of the menu
-            sys.stdout.flush()
-            break
 
 
 def t_multi_select(
     title: str,
     options: list[str],
-    min_selections: int = 0,
-    max_selections: int = None,
     *,
     arrow: str = "\033[1;34m>\033[0m",
     tick: str = "\033[1;32mx\033[0m",
@@ -126,8 +127,6 @@ def t_multi_select(
     Display a menu in the terminal and allow the user to select multiple options.
     :param title: The title of the menu.
     :param options: The options to display.
-    :param min_selections: The minimum number of options that must be selected.
-    :param max_selections: The maximum number of options that can be selected.
     :param arrow: The arrow to display next to the current option.
     :param tick: The symbol to represent selected options.
     :param finish_option: The text to display for finishing selection.
@@ -138,7 +137,8 @@ def t_multi_select(
     )  # A list to keep track of which options are selected
     current_option = 0  # Currently highlighted option
 
-    def print_menu(error: bool = False):
+
+    def print_menu():
         # Clear the screen and reprint the menu
         for _ in range(
             len(options) + 3
@@ -184,13 +184,11 @@ def t_multi_select(
 
         elif key in ["\r", "\n", " "]:  # Space bar to select or deselect
             if current_option == len(options):
-                if sum(selected_options) >= min_selections:
-                    sys.stdout.write("\n")
-                    break
-                print_menu(error=True)
-            else:
-                selected_options[current_option] = not selected_options[current_option]
-                print_menu()
+                sys.stdout.write("\n")
+                break
+
+            selected_options[current_option] = not selected_options[current_option]
+            print_menu()
 
     # Return the list of selected options
     return [option for option, selected in zip(options, selected_options) if selected]
@@ -198,17 +196,17 @@ def t_multi_select(
 
 if __name__ == "__main__":
     t_scroll_clear()
-    my_question = "This is a t_question: "
-    answer = t_question(my_question)
+    MY_QUESTION = "This is a t_question: "
+    answer = t_question(MY_QUESTION)
     t_message(f"You answered: {answer}")
 
-    my_title = "This is a t_select:"
+    MY_TITLE = "This is a t_select:"
     my_options = ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5"]
-    selected_option = t_select(title=my_title, options=my_options)
-    t_message(f"You selected: {selected_option}")
+    SELECTED_OPTION = t_select(title=MY_TITLE, options=my_options)
+    t_message(f"You selected: {SELECTED_OPTION}")
 
-    my_title = "This is a t_multi_select:"
+    MY_TITLE = "This is a t_multi_select:"
     my_options = ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5"]
-    selected_options = t_multi_select(title=my_title, options=my_options)
-    t_message(f"You selected: {', '.join(selected_options)}")
+    SELECTED_OPTIONS = t_multi_select(title=MY_TITLE, options=my_options)
+    t_message(f"You selected: {', '.join(SELECTED_OPTIONS)}")
     t_clear()
