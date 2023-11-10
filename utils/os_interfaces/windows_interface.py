@@ -6,7 +6,7 @@ def clear():
     """
     Clear the terminal.
     """
-    os.system('cls')
+    os.system("cls")
 
 
 def get_key() -> str:
@@ -18,6 +18,6 @@ def get_key() -> str:
     key = msvcrt.getch()
 
     # If it's the escape character, expect a bracket and read the next byte
-    if key == b'\xe0':
+    if key == b"\xe0":
         key = msvcrt.getch()
     return key.decode()

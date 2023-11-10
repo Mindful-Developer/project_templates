@@ -30,23 +30,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Mindful-Developer/project_templates">
+    <img src="images/logo.png" alt="Logo" width="500">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">PROJECT TEMPLATES</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    A collection of project templates to help you get started on your next project!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Mindful-Development/project_templates"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/Mindful-Developer/project_templates">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/Mindful-Developer/project_templates/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/Mindful-Developer/project_templates/issues">Request Feature</a>
   </p>
 </div>
 
@@ -83,71 +83,67 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+This project was created to help developers get started on their next project. It includes a basic readme template, a changelog template, and a shell script to automate the creation of new projects.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-### Built With
+[//]: # (### Built With)
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+[//]: # (* [![Next][Next.js]][Next-url])
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+[//]: # (* [![React][React.js]][React-url])
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[//]: # (* [![Vue][Vue.js]][Vue-url])
+
+[//]: # (* [![Angular][Angular.io]][Angular-url])
+
+[//]: # (* [![Svelte][Svelte.dev]][Svelte-url])
+
+[//]: # (* [![Laravel][Laravel.com]][Laravel-url])
+
+[//]: # (* [![Bootstrap][Bootstrap.com]][Bootstrap-url])
+
+[//]: # (* [![JQuery][JQuery.com]][JQuery-url])
+
+[//]: # (<p align="right">&#40;<a href="#readme-top">back to top</a>&#41;</p>)
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+The only requirement for this project is a semi-newer version of Python. You can download the latest version [here](https://www.python.org/downloads/).
+
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* Python 3.6+
+
+Check your version using
+```sh
+python --version
+```
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. clone the repo 
+```sh
+git clone https://github.com/Mindful-Developer/project_templates.git
+```
+2. Install Python packages
+```sh
+pip install -r requirements.txt
+```
+3. Add the shell script to your path
+```sh
+export PATH=$PATH:/path/to/project_templates
+```
+4. Run the script
+```sh
+project <project_name>
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,9 +207,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Chris James - [mindful.d3v@gmail.com](mindful.d3v@gmail.com)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/Mindful-Developer/project_templates](https://github.com/Mindful-Developer/project_templates)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -225,13 +221,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
 * [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -239,18 +229,18 @@ Use this space to list resources you find helpful and would like to give credit 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/Mindful-Developer/project_templates.svg?style=for-the-badge
+[contributors-url]: https://github.com/Mindful-Developer/project_templates/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Mindful-Developer/project_templates.svg?style=for-the-badge
 [forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[stars-shield]: https://img.shields.io/github/stars/Mindful-Developer/project_templates.svg?style=for-the-badge
+[stars-url]: https://github.com/Mindful-Developer/project_templates/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Mindful-Developer/project_templates.svg?style=for-the-badge
+[issues-url]: https://github.com/Mindful-Developer/project_templates/issues
+[license-shield]: https://img.shields.io/github/license/Mindful-Developer/project_templates.svg?style=for-the-badge
+[license-url]: https://github.com/Mindful-Developer/project_templates/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[linkedin-url]: https://linkedin.com/in/christopher-james-96a7911b3
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/

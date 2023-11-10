@@ -1,7 +1,7 @@
 import sys
 import os
 
-if os.name == 'nt':
+if os.name == "nt":
     from os_interfaces.windows_interface import get_key, clear
 else:
     from os_interfaces.linux_interface import get_key, clear
@@ -48,7 +48,14 @@ def t_question(question: str) -> str:
     sys.stdout.flush()
     return inp
 
-def t_select(title: str, options: list[str], arrow: str = '\033[1;34m>\033[0m', *, q: bool = False) -> str:
+
+def t_select(
+    title: str,
+    options: list[str],
+    arrow: str = "\033[1;34m>\033[0m",
+    *,
+    q: bool = False,
+) -> str:
     """
     Display a menu in the terminal and return the selected option.
     :param title: The title of the menu.
@@ -71,7 +78,7 @@ def t_select(title: str, options: list[str], arrow: str = '\033[1;34m>\033[0m', 
         sys.stdout.write(title + "\n")
         sys.stdout.write("-" * len(title) + "\n")
         for index, option in enumerate(options):
-            prefix = arrow if index == current_option else ' '
+            prefix = arrow if index == current_option else " "
             sys.stdout.write(f"{prefix} {option}\n")
         sys.stdout.flush()
 
@@ -84,35 +91,37 @@ def t_select(title: str, options: list[str], arrow: str = '\033[1;34m>\033[0m', 
     while True:
         key = get_key()
 
-        if key in ['P', 'j']:
+        if key in ["P", "j"]:
             if current_option < option_count - 1:
                 current_option += 1
             print_menu()
 
-        elif key in ['H', 'k']:
+        elif key in ["H", "k"]:
             if current_option > 0:
                 current_option -= 1
             print_menu()
 
-        elif key in ['\r', '\n', ' ']:  # Enter key (carriage return or newline)
+        elif key in ["\r", "\n", " "]:  # Enter key (carriage return or newline)
             sys.stdout.write("\n")  # Move the cursor down to the end of the menu
             sys.stdout.flush()
             return options[current_option]
 
-        elif q and key == 'q':  # Allow 'q' to quit as well
+        elif q and key == "q":  # Allow 'q' to quit as well
             sys.stdout.write("\n")  # Move the cursor down to the end of the menu
             sys.stdout.flush()
             break
 
 
-def t_multi_select(title: str,
-                   options: list[str],
-                   min_selections: int = 0,
-                   max_selections: int = None,
-                   *,
-                   arrow: str = '\033[1;34m>\033[0m',
-                   tick: str = '\033[1;32mx\033[0m',
-                   finish_option: str = 'Done') -> list[str]:
+def t_multi_select(
+    title: str,
+    options: list[str],
+    min_selections: int = 0,
+    max_selections: int = None,
+    *,
+    arrow: str = "\033[1;34m>\033[0m",
+    tick: str = "\033[1;32mx\033[0m",
+    finish_option: str = "Done",
+) -> list[str]:
     """
     Display a menu in the terminal and allow the user to select multiple options.
     :param title: The title of the menu.
@@ -124,12 +133,16 @@ def t_multi_select(title: str,
     :param finish_option: The text to display for finishing selection.
     :return: A list of selected options.
     """
-    selected_options = [False] * len(options)  # A list to keep track of which options are selected
+    selected_options = [False] * len(
+        options
+    )  # A list to keep track of which options are selected
     current_option = 0  # Currently highlighted option
 
     def print_menu(error: bool = False):
         # Clear the screen and reprint the menu
-        for _ in range(len(options) + 3):  # +3 for title, the line below it, and the "Done" option
+        for _ in range(
+            len(options) + 3
+        ):  # +3 for title, the line below it, and the "Done" option
             sys.stdout.write("\r\x1b[K")  # Clear the entire line
             sys.stdout.write("\x1b[1A")  # Move cursor one line up
         sys.stdout.write("\r\x1b[K")  # Clear the line with the title
@@ -138,10 +151,12 @@ def t_multi_select(title: str,
         sys.stdout.write(title + "\n")
         sys.stdout.write("-" * len(title) + "\n")
         for index, option in enumerate(options):
-            prefix = arrow if index == current_option else ' '
-            tick_mark = tick if selected_options[index] else ' '
+            prefix = arrow if index == current_option else " "
+            tick_mark = tick if selected_options[index] else " "
             sys.stdout.write(f"{tick_mark} {prefix} {option}\n")
-        sys.stdout.write(f"  {arrow if current_option == len(options) else ' '} {finish_option}\n")
+        sys.stdout.write(
+            f"  {arrow if current_option == len(options) else ' '} {finish_option}\n"
+        )
 
     for _ in range(len(options) + 3):
         sys.stdout.write("\n")
@@ -151,21 +166,23 @@ def t_multi_select(title: str,
     while True:
         key = get_key()
 
-        if key in ['P', 'j']:  # Arrow down or 'j' for down
-            if current_option < len(options):  # Ensure current_option does not go beyond 'Done'
+        if key in ["P", "j"]:  # Arrow down or 'j' for down
+            if current_option < len(
+                options
+            ):  # Ensure current_option does not go beyond 'Done'
                 current_option += 1
             else:
                 current_option = 0  # Wrap around to the first option
             print_menu()
 
-        elif key in ['H', 'k']:  # Arrow up or 'k' for up
+        elif key in ["H", "k"]:  # Arrow up or 'k' for up
             if current_option > 0:
                 current_option -= 1
             else:
                 current_option = len(options)  # Wrap around to 'Done'
             print_menu()
 
-        elif key in ['\r', '\n', ' ']:  # Space bar to select or deselect
+        elif key in ["\r", "\n", " "]:  # Space bar to select or deselect
             if current_option == len(options):
                 if sum(selected_options) >= min_selections:
                     sys.stdout.write("\n")
@@ -179,7 +196,7 @@ def t_multi_select(title: str,
     return [option for option, selected in zip(options, selected_options) if selected]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t_scroll_clear()
     my_question = "This is a t_question: "
     answer = t_question(my_question)

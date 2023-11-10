@@ -8,7 +8,7 @@ def clear():
     """
     Clear the terminal.
     """
-    os.system('clear')
+    os.system("clear")
 
 
 def get_key() -> str:
@@ -27,7 +27,7 @@ def get_key() -> str:
         ch = sys.stdin.read(1)
 
         # If it's the escape character, expect a bracket and read two more bytes
-        if ch == '\x1b':
+        if ch == "\x1b":
             ch = sys.stdin.read(2)
         return ch
     finally:
