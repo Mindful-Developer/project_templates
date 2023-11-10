@@ -88,29 +88,6 @@ This project was created to help developers get started on their next project. I
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-[//]: # (### Built With)
-
-[//]: # (* [![Next][Next.js]][Next-url])
-
-[//]: # (* [![React][React.js]][React-url])
-
-[//]: # (* [![Vue][Vue.js]][Vue-url])
-
-[//]: # (* [![Angular][Angular.io]][Angular-url])
-
-[//]: # (* [![Svelte][Svelte.dev]][Svelte-url])
-
-[//]: # (* [![Laravel][Laravel.com]][Laravel-url])
-
-[//]: # (* [![Bootstrap][Bootstrap.com]][Bootstrap-url])
-
-[//]: # (* [![JQuery][JQuery.com]][JQuery-url])
-
-[//]: # (<p align="right">&#40;<a href="#readme-top">back to top</a>&#41;</p>)
-
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -119,7 +96,7 @@ The only requirement for this project is a semi-newer version of Python. You can
 
 ### Prerequisites
 
-* Python 3.6+
+* Python 3.10+
 
 Check your version using
 ```sh
@@ -160,20 +137,30 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
-<!-- ROADMAP -->
-## Roadmap
+[//]: # (<!-- ROADMAP -->)
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+[//]: # (## Roadmap)
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+[//]: # ()
+[//]: # (- [x] Add Changelog)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[//]: # (- [x] Add back to top links)
+
+[//]: # (- [ ] Add Additional Templates w/ Examples)
+
+[//]: # (- [ ] Add "components" document to easily copy & paste sections of the readme)
+
+[//]: # (- [ ] Multi-language Support)
+
+[//]: # (    - [ ] Chinese)
+
+[//]: # (    - [ ] Spanish)
+
+[//]: # ()
+[//]: # (See the [open issues]&#40;https://github.com/othneildrew/Best-README-Template/issues&#41; for a full list of proposed features &#40;and known issues&#41;.)
+
+[//]: # ()
+[//]: # (<p align="right">&#40;<a href="#readme-top">back to top</a>&#41;</p>)
 
 
 
